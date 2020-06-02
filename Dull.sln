@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dull.WinformApp", "Dull.WinformApp\Dull.WinformApp.csproj", "{0A3A313C-0F69-429D-B1B8-0D8246A8220A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{8667F3A7-B396-4F70-8C81-A58CF96A88F8}"
+	ProjectSection(SolutionItems) = preProject
+		Samples\test.csv = Samples\test.csv
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A3A313C-0F69-429D-B1B8-0D8246A8220A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3A313C-0F69-429D-B1B8-0D8246A8220A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3A313C-0F69-429D-B1B8-0D8246A8220A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3A313C-0F69-429D-B1B8-0D8246A8220A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89658A53-5849-4D70-840C-6DC89C4E6FDE}
+	EndGlobalSection
+EndGlobal
