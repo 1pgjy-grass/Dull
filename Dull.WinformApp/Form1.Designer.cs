@@ -35,8 +35,6 @@
             this.btnDownloadFiles = new System.Windows.Forms.Button();
             this.btnSelectOutputDir = new System.Windows.Forms.Button();
             this.btnSelectFile = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.panel1.SuspendLayout();
@@ -50,12 +48,10 @@
             this.panel1.Controls.Add(this.btnDownloadFiles);
             this.panel1.Controls.Add(this.btnSelectOutputDir);
             this.panel1.Controls.Add(this.btnSelectFile);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 239);
+            this.panel1.Size = new System.Drawing.Size(800, 209);
             this.panel1.TabIndex = 0;
             // 
             // rtbDownloadingInfo
@@ -115,32 +111,10 @@
             this.btnSelectFile.UseVisualStyleBackColor = true;
             this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(713, 210);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "另存";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(601, 210);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "导航";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // splitter1
             // 
             this.splitter1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.splitter1.Location = new System.Drawing.Point(0, 239);
+            this.splitter1.Location = new System.Drawing.Point(0, 209);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(800, 3);
             this.splitter1.TabIndex = 1;
@@ -149,11 +123,11 @@
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 242);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 212);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScriptErrorsSuppressed = true;
-            this.webBrowser1.Size = new System.Drawing.Size(800, 208);
+            this.webBrowser1.Size = new System.Drawing.Size(800, 238);
             this.webBrowser1.TabIndex = 2;
             // 
             // Form1
@@ -175,10 +149,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox rtbDownloadingInfo;
         private System.Windows.Forms.TextBox tbOutputDirSelected;
         private System.Windows.Forms.TextBox tbFileSelected;
