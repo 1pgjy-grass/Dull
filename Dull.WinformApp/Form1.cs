@@ -121,13 +121,17 @@ namespace Dull.WinformApp
                 msg = "只接受csv格式源文件，请重新选择文件！";
                 return false;
             }
-            using (var fs = new FileStream(requestLite.CsvFile, FileMode.Open))
+            try
             {
-                if (!fs.CanRead)
+                using (var fs = File.OpenRead(requestLite.CsvFile))
                 {
-                    msg = "源文件被其他程序锁定，请释放后重试！";
-                    return false;
+
                 }
+            }
+            catch (IOException e)
+            {
+                msg = e.Message;
+                return false;
             }
 
             //all passed
