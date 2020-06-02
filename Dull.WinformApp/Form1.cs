@@ -18,8 +18,6 @@ namespace Dull.WinformApp
         {
             InitializeComponent();
 
-            tbOutputDirSelected.Text = Environment.CurrentDirectory;
-
             autoSaveHookManager = new AutoSaveHookManager(downloadedEvent);
         }
 
@@ -30,16 +28,6 @@ namespace Dull.WinformApp
                 if (dlg.ShowDialog() != DialogResult.OK) return;
 
                 tbFileSelected.Text = dlg.FileName;
-            }
-        }
-
-        private void btnSelectOutputDir_Click(object sender, EventArgs e)
-        {            
-            using (var dlg = new CommonOpenFileDialog() { IsFolderPicker = true, Multiselect = false })
-            {
-                if (dlg.ShowDialog() != CommonFileDialogResult.Ok) return;
-
-                tbOutputDirSelected.Text = dlg.FileName;
             }
         }
 
@@ -77,10 +65,10 @@ namespace Dull.WinformApp
 
                     await Task.Run(() => downloadedEvent.WaitOne());
                 }
+
+                MessageBox.Show("下载完成！");
             }            
         }
-
-
 
         private void DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
@@ -94,7 +82,7 @@ namespace Dull.WinformApp
         private bool SetSavePath(RequestLite requestLite)
         {
             var dir = "~" + Path.GetFileNameWithoutExtension(requestLite.CsvFile);
-            string path = Path.Combine(requestLite.OutputDir, dir);
+            string path = Path.Combine(Environment.CurrentDirectory, dir);
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
@@ -111,14 +99,15 @@ namespace Dull.WinformApp
                 {
                     return false;
                 }
-            }
 
+                requestLite.OutputDir = dlg.FileName;
+            }            
             return true;
         }
 
         private bool CheckPrerequisites(out RequestLite requestLite, out string msg)
         {
-            requestLite = new RequestLite { CsvFile = tbFileSelected.Text, OutputDir = tbOutputDirSelected.Text };
+            requestLite = new RequestLite { CsvFile = tbFileSelected.Text };
             msg = null;
 
             //check csv file
@@ -137,24 +126,6 @@ namespace Dull.WinformApp
                 if (!fs.CanRead)
                 {
                     msg = "源文件被其他程序锁定，请释放后重试！";
-                    return false;
-                }
-            }
-            //check output dir
-            if (String.IsNullOrWhiteSpace(requestLite.OutputDir))
-            {
-                msg = "请选择目录！";
-                return false;
-            }
-            if (!Directory.Exists(requestLite.OutputDir))
-            {
-                try
-                {
-                    Directory.CreateDirectory(requestLite.OutputDir);
-                }
-                catch
-                {
-                    msg = "路径不合法，请重新选择输出目录！";
                     return false;
                 }
             }

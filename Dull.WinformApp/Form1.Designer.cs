@@ -30,10 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.rtbDownloadingInfo = new System.Windows.Forms.RichTextBox();
-            this.tbOutputDirSelected = new System.Windows.Forms.TextBox();
             this.tbFileSelected = new System.Windows.Forms.TextBox();
             this.btnDownloadFiles = new System.Windows.Forms.Button();
-            this.btnSelectOutputDir = new System.Windows.Forms.Button();
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
@@ -43,10 +41,8 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.rtbDownloadingInfo);
-            this.panel1.Controls.Add(this.tbOutputDirSelected);
             this.panel1.Controls.Add(this.tbFileSelected);
             this.panel1.Controls.Add(this.btnDownloadFiles);
-            this.panel1.Controls.Add(this.btnSelectOutputDir);
             this.panel1.Controls.Add(this.btnSelectFile);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -59,20 +55,13 @@
             this.rtbDownloadingInfo.BackColor = System.Drawing.SystemColors.WindowText;
             this.rtbDownloadingInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtbDownloadingInfo.ForeColor = System.Drawing.SystemColors.Window;
-            this.rtbDownloadingInfo.Location = new System.Drawing.Point(103, 72);
+            this.rtbDownloadingInfo.Location = new System.Drawing.Point(103, 41);
             this.rtbDownloadingInfo.Name = "rtbDownloadingInfo";
             this.rtbDownloadingInfo.ReadOnly = true;
             this.rtbDownloadingInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbDownloadingInfo.Size = new System.Drawing.Size(685, 96);
+            this.rtbDownloadingInfo.Size = new System.Drawing.Size(685, 146);
             this.rtbDownloadingInfo.TabIndex = 4;
             this.rtbDownloadingInfo.Text = "1、阻塞UI线程，请勿在下载文件过程中点击界面！！！\n2、点击【下载文件】后，会弹出“选择文件夹”对话框，请直接点【选择文件夹】！！！\n";
-            // 
-            // tbOutputDirSelected
-            // 
-            this.tbOutputDirSelected.Location = new System.Drawing.Point(103, 41);
-            this.tbOutputDirSelected.Name = "tbOutputDirSelected";
-            this.tbOutputDirSelected.Size = new System.Drawing.Size(685, 21);
-            this.tbOutputDirSelected.TabIndex = 3;
             // 
             // tbFileSelected
             // 
@@ -83,23 +72,13 @@
             // 
             // btnDownloadFiles
             // 
-            this.btnDownloadFiles.Location = new System.Drawing.Point(12, 70);
+            this.btnDownloadFiles.Location = new System.Drawing.Point(12, 41);
             this.btnDownloadFiles.Name = "btnDownloadFiles";
             this.btnDownloadFiles.Size = new System.Drawing.Size(85, 23);
             this.btnDownloadFiles.TabIndex = 2;
             this.btnDownloadFiles.Text = "下载文件";
             this.btnDownloadFiles.UseVisualStyleBackColor = true;
             this.btnDownloadFiles.Click += new System.EventHandler(this.btnDownloadFiles_Click);
-            // 
-            // btnSelectOutputDir
-            // 
-            this.btnSelectOutputDir.Location = new System.Drawing.Point(12, 41);
-            this.btnSelectOutputDir.Name = "btnSelectOutputDir";
-            this.btnSelectOutputDir.Size = new System.Drawing.Size(85, 23);
-            this.btnSelectOutputDir.TabIndex = 2;
-            this.btnSelectOutputDir.Text = "输出目录";
-            this.btnSelectOutputDir.UseVisualStyleBackColor = true;
-            this.btnSelectOutputDir.Click += new System.EventHandler(this.btnSelectOutputDir_Click);
             // 
             // btnSelectFile
             // 
@@ -152,10 +131,8 @@
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.RichTextBox rtbDownloadingInfo;
-        private System.Windows.Forms.TextBox tbOutputDirSelected;
         private System.Windows.Forms.TextBox tbFileSelected;
         private System.Windows.Forms.Button btnDownloadFiles;
-        private System.Windows.Forms.Button btnSelectOutputDir;
         private System.Windows.Forms.Button btnSelectFile;
     }
 }
