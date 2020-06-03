@@ -147,7 +147,7 @@ namespace Dull.WinformApp
 
         public void Install()
         {
-            hook = SetWindowsHookEx(HookType.WH_CBT, hookProc, IntPtr.Zero, AppDomain.GetCurrentThreadId());
+            hook = SetWindowsHookEx(HookType.WH_CBT, hookProc, IntPtr.Zero, GetCurrentThreadId());
             if (hook == IntPtr.Zero)
             {
                 var error = new Win32Exception(Marshal.GetLastWin32Error());
