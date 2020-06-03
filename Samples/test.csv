@@ -1,4 +1,3 @@
-分类,ID,含链接的文档标题,文档URL,文档标题
-MM,458,内向交货过账,https://www.fenginfo.com/458.html,内向交货过账
-SD,460,销售订单_退货型,https://www.fenginfo.com/460.html,销售订单_退货型
-MM,462,采购报价维护_常规物料,https://www.fenginfo.com/462.html,采购报价维护_常规物料
+CATAGORY,ID,TITLE,URL
+MM,458,bing,https://www.bing.com/
+SD,460,ms,https://www.microsoft.com/

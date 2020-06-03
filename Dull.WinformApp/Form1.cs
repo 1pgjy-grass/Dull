@@ -30,7 +30,7 @@ namespace Dull.WinformApp
 
         private void btnSelectFile_Click(object sender, EventArgs e)
         {
-            using (var dlg = new OpenFileDialog { Multiselect = false, Filter = "CSV 文件 (*.csv)|*.csv" })
+            using (var dlg = new OpenFileDialog { Multiselect = false, Filter = "CSV Files (*.csv)|*.csv" })
             {
                 if (dlg.ShowDialog() != DialogResult.OK) return;
 
@@ -73,7 +73,7 @@ namespace Dull.WinformApp
                     await Task.Run(() => downloadedEvent.WaitOne());
                 }
 
-                MessageBox.Show("下载完成！");
+                MessageBox.Show("All done！");
             }            
         }
 
@@ -100,7 +100,7 @@ namespace Dull.WinformApp
                 dlg.InitialDirectory = path;
                 dlg.IsFolderPicker = true;
                 dlg.Multiselect = false;
-                dlg.Title = "下载即将开始，请按下【选择文件夹】";
+                dlg.Title = "Download to";
 
                 if (dlg.ShowDialog() != CommonFileDialogResult.Ok)
                 {
@@ -120,12 +120,12 @@ namespace Dull.WinformApp
             //check csv file
             if (!File.Exists(requestLite.CsvFile))
             {
-                msg = "源文件不存在或未指定，请选择文件！";
+                msg = "csv file not found！";
                 return false;
             }
             if (Path.GetExtension(requestLite.CsvFile).ToLower() != ".csv")
             {
-                msg = "只接受csv格式源文件，请重新选择文件！";
+                msg = "only csv file allowed!";
                 return false;
             }
             try

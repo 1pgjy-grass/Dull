@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.rtbDownloadingInfo = new System.Windows.Forms.RichTextBox();
             this.tbFileSelected = new System.Windows.Forms.TextBox();
@@ -35,6 +37,7 @@
             this.btnSelectFile = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +64,7 @@
             this.rtbDownloadingInfo.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.rtbDownloadingInfo.Size = new System.Drawing.Size(685, 146);
             this.rtbDownloadingInfo.TabIndex = 4;
-            this.rtbDownloadingInfo.Text = "1、阻塞UI线程，请勿在下载文件过程中点击界面！！！\n2、点击【下载文件】后，会弹出“选择文件夹”对话框，请直接点【选择文件夹】！！！\n";
+            this.rtbDownloadingInfo.Text = resources.GetString("rtbDownloadingInfo.Text");
             // 
             // tbFileSelected
             // 
@@ -76,7 +79,8 @@
             this.btnDownloadFiles.Name = "btnDownloadFiles";
             this.btnDownloadFiles.Size = new System.Drawing.Size(85, 23);
             this.btnDownloadFiles.TabIndex = 2;
-            this.btnDownloadFiles.Text = "下载文件";
+            this.btnDownloadFiles.Text = "Download";
+            this.toolTip1.SetToolTip(this.btnDownloadFiles, "Click to begin download");
             this.btnDownloadFiles.UseVisualStyleBackColor = true;
             this.btnDownloadFiles.Click += new System.EventHandler(this.btnDownloadFiles_Click);
             // 
@@ -86,7 +90,8 @@
             this.btnSelectFile.Name = "btnSelectFile";
             this.btnSelectFile.Size = new System.Drawing.Size(85, 23);
             this.btnSelectFile.TabIndex = 2;
-            this.btnSelectFile.Text = "选择文件";
+            this.btnSelectFile.Text = "Select";
+            this.toolTip1.SetToolTip(this.btnSelectFile, "Select a csv file");
             this.btnSelectFile.UseVisualStyleBackColor = true;
             this.btnSelectFile.Click += new System.EventHandler(this.btnSelectFile_Click);
             // 
@@ -134,6 +139,7 @@
         private System.Windows.Forms.TextBox tbFileSelected;
         private System.Windows.Forms.Button btnDownloadFiles;
         private System.Windows.Forms.Button btnSelectFile;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

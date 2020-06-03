@@ -7,9 +7,9 @@ namespace Dull.WinformApp
         public WebDocumentMap()
         {
             Map(m => m.Id).Name("ID");
-            Map(m => m.Catagory).Name("分类");
-            Map(m => m.Url).Name("文档URL");
-            Map(m => m.Title).Name("文档标题");
+            Map(m => m.Catagory).Name("CATAGORY");
+            Map(m => m.Title).Name("TITLE");
+            Map(m => m.Url).Name("URL");
         }
     }
 }
