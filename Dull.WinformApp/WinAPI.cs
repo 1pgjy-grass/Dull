@@ -25,6 +25,30 @@ namespace Dull.WinformApp
 
         public delegate IntPtr HookProc(int code, IntPtr wParam, IntPtr lParam);
 
+        [StructLayout(LayoutKind.Sequential)]
+        public struct CbtCreateWnd
+        {
+            public unsafe CreateStruct* lpcs;
+            public IntPtr hwndInsertAfter;
+        }
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
+        public struct CreateStruct
+        {
+            public IntPtr lpCreateParams;
+            public IntPtr hInstance;
+            public IntPtr hMenu;
+            public IntPtr hwndParent;
+            public int cy;
+            public int cx;
+            public int y;
+            public int x;
+            public int style;
+            public IntPtr lpszName;
+            public IntPtr lpszClass;
+            public int dwExStyle;
+        }
+
         public enum HookType : int
         {
             WH_JOURNALRECORD = 0,
@@ -61,5 +85,6 @@ namespace Dull.WinformApp
         public const int CB_SETCURSEL = 0x014E;
         public const int WM_COMMAND = 0x0111;
         public const int BM_CLICK = 0x00F5;
+        public const int DLG_CLASS = 0x8002;
     }   
 }

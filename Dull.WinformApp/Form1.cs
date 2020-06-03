@@ -19,6 +19,13 @@ namespace Dull.WinformApp
             InitializeComponent();
 
             autoSaveHookManager = new AutoSaveHookManager(downloadedEvent);
+
+            Disposed += Form1_Disposed;
+        }
+
+        private void Form1_Disposed(object sender, EventArgs e)
+        {
+            autoSaveHookManager.Dispose();
         }
 
         private void btnSelectFile_Click(object sender, EventArgs e)
