@@ -3,6 +3,7 @@ using Microsoft.WindowsAPICodePack.Dialogs;
 using System;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -53,8 +54,8 @@ namespace Dull.WinformApp
                 return;
             }
 
-            
-            using (var reader = new StreamReader(requestLite.CsvFile))
+            Encoding encoding = SimpleHelpers.FileEncoding.DetectFileEncoding(requestLite.CsvFile, Encoding.Default);
+            using (var reader = new StreamReader(requestLite.CsvFile, encoding))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
                 csv.Configuration.RegisterClassMap<WebDocumentMap>();
